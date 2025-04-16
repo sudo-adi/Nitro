@@ -22,7 +22,6 @@ const ChatView = ({ sessionId }: { sessionId: Id<"session"> }) => {
   const [isTyping, setIsTyping] = useState(false);
   const [loading, setLoading] = useState(false);
   const { messages, setMessages } = useContext(MessageContext);
-  const { userDetail } = useContext(UserDetailContext);
   const convex = useConvex();
   const UpdateMessages = useMutation(api.session.UpdateMessages);
 

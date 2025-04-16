@@ -15,7 +15,6 @@ import { useUser } from "@clerk/nextjs";
 import NitroText from "@/components/custom/NitroText";
 import Footer from "@/components/custom/Footer";
 import { Message } from "@/context/MessageContext";
-import { UserDetailContext } from "@/context/UserDetailContext";
 import { useRouter } from "next/navigation";
 import { useMutation } from "convex/react";
 import { api } from "../../../convex/_generated/api";
@@ -27,13 +26,10 @@ export const LandingPage = () => {
   const [showAuthDialog, setShowAuthDialog] = useState(false);
   const [isHoveringSidebar, setIsHoveringSidebar] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const textareaRef = useRef(null);
   const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
-  const [openDialog, setOpenDialog] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const { isSignedIn, isLoaded, user } = useUser();
-  const { userDetail } = useContext(UserDetailContext);
   const [inputValue, setInputValue] = useState("");
 
   const router = useRouter();
@@ -294,7 +290,7 @@ export const LandingPage = () => {
         </svg>
       </motion.div>
       <NavBar />
-      <div className="flex flex-col w-full max-w-4xl mx-auto p-8 items-center justify-center text-center flex-1 gap-8 z-10 mt-[-10rem] z-100">
+      <div className="flex flex-col w-full max-w-4xl mx-auto p-8 items-center justify-center text-center flex-1 gap-8 z-10 mt-[-10rem]">
         <motion.div
           className="relative group"
           initial={{ scale: 0.8, opacity: 0 }}

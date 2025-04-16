@@ -82,7 +82,7 @@ const CodeView = () => {
   const generateCode = async () => {
     try {
       const lastMessage = messages[messages?.length - 1]?.content;
-      const promptString = `${lastMessage}` + prompt.CHAT_PROMPT;
+      const promptString = `${lastMessage} ` + prompt.CODE_GEN_PROMPT;
 
       const result = await axios.post("/api/gen-ai-code", {
         prompt: promptString,
@@ -94,7 +94,7 @@ const CodeView = () => {
 
       const mergedFiles = {
         ...data.DEFAULT_FILE,
-        ...aiResp,
+        ...aiResp?.files,
       };
 
       console.log("here it is ", mergedFiles);
