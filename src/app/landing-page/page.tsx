@@ -19,7 +19,6 @@ import { UserDetailContext } from "@/context/UserDetailContext";
 import { useRouter } from "next/navigation";
 import { useMutation } from "convex/react";
 import { api } from "../../../convex/_generated/api";
-import { Id } from "../../../convex/_generated/dataModel";
 import { toast } from "sonner";
 
 export const LandingPage = () => {

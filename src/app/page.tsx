@@ -1,5 +1,5 @@
 import React from "react";
-import { LandingPage } from "./(landing-page)/page";
+import { LandingPage } from "./landing-page/page";
 
 const Nitro = () => {
   return (
