@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
-import { Send, Link as LinkIcon } from "lucide-react";
+import { Send, User, Plus } from "lucide-react"; // Add User and Plus icons
 import { Textarea } from "@/components/ui/textarea";
 import { Message, MessageContext } from "@/context/MessageContext";
-import { UserDetailContext } from "@/context/UserDetailContext";
 import ReactMarkdown from "react-markdown";
 import { useConvex } from "convex/react";
 import { api } from "../../../convex/_generated/api";
@@ -12,8 +11,6 @@ import { Id } from "../../../convex/_generated/dataModel";
 import axios from "axios";
 import { AxiosError } from "axios";
 import { toast } from "sonner";
-import prompt from "@/constants/prompt";
-
 // Add Prompt constant
 const CHAT_PROMPT = `You are an AI assistant helping with code generation.`;
 
@@ -116,42 +113,13 @@ const ChatView = ({ sessionId }: { sessionId: Id<"session"> }) => {
                     {msg.content}
                   </div>
                   <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      className="text-white/70"
-                    >
-                      <path
-                        d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <circle cx="12" cy="7" r="4" strokeWidth="2" />
-                    </svg>
+                    <User className="h-4 w-4 text-white/70" />
                   </div>
                 </>
               ) : (
                 <>
                   <div className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      className="text-cyan-400"
-                    >
-                      <path
-                        d="M12 8V16M8 12H16"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    <Plus className="h-4 w-4 text-cyan-400" />
                   </div>
                   <div className="flex-1 bg-white/5 rounded-lg p-3 text-sm text-white/80">
                     <ReactMarkdown>{msg.content}</ReactMarkdown>

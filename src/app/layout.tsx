@@ -1,9 +1,8 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import GlobalProvider from "./_providers/GlobalProvider";
-import { ClerkProvider } from "@clerk/nextjs";
-import { DotPattern } from "@/components/magicui/dot-pattern";
 import { Toaster } from "@/components/ui/sonner";
+import { ClerkProvider } from "@clerk/nextjs";
+import type { Metadata } from "next";
+import GlobalProvider from "./_providers/GlobalProvider";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",

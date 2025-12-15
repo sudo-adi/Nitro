@@ -17,10 +17,8 @@ export default function NitroText({ className = "" }) {
   const [rotation, setRotation] = useState(0);
   const [sliceGlitches, setSliceGlitches] = useState<SliceGlitch[]>([]);
 
-  // Outline colors - using paler versions
-  const colors = ["#8cffff80", "#ffb6e180"]; // Pale cyan and pale pink with reduced opacity
+  const colors = ["#8cffff80", "#ffb6e180"];
 
-  // Generate text slice glitches
   const generateSliceGlitches = () => {
     const slices: SliceGlitch[] = [];
     const sliceCount = Math.floor(Math.random() * 3) + 2; // 2-4 slices
@@ -63,7 +61,6 @@ export default function NitroText({ className = "" }) {
   };
 
   useEffect(() => {
-    // Schedule glitches at random intervals
     const scheduleNextGlitch = () => {
       const nextDelay = Math.floor(Math.random() * 2000) + 500; // 500-2500ms
 
@@ -169,7 +166,6 @@ export default function NitroText({ className = "" }) {
           </div>
         ))}
 
-      {/* Scanlines effect */}
       <div
         className="absolute inset-0 pointer-events-none opacity-2"
         style={{

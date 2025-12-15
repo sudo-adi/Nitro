@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { ThemeProvider as NextThemeProvider } from "next-themes";
 import { Message, MessageContext } from "@/context/MessageContext";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 import ConvexClientProvider from "./ConvexClientProvider";
 import { UserDetailContext } from "@/context/UserDetailContext";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -21,7 +20,6 @@ const GlobalProvider = ({ children }: GlobalProviderProps) => {
     typeof window !== "undefined"
       ? process.env.NEXT_PUBLIC_GOOGLE_AUTH_CLIENT_ID_KEY
       : "";
-
   return (
     <ClerkProvider>
       <ConvexClientProvider>

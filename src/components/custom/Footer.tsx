@@ -28,7 +28,6 @@ export default function Footer() {
         </div>
       </motion.footer>
 
-      {/* Social Media Icons */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
